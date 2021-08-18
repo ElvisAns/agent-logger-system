@@ -1,0 +1,1384 @@
+
+
+/*NAVBAR*/
+:root {
+    --primary-color: #5B25F5;
+    --secondary-color: #9792c7;
+    --secondary-color-with-opacity: #bab4e21f;
+    --background-color: #F5F5FD;
+    --background-color-hover: #e5e5ec;
+    --text: #9792c7;
+    --white: #fff;
+    --black: #000;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--white);
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.navbar {
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    padding: 1.563em;
+    font-weight: 600;
+    width: 18.75em;
+    box-sizing: border-box;
+    justify-content: space-between;
+    z-index: 11;
+}
+
+.navbar-brand {
+    padding: 2.188em 0em 2em 1em;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.navbar-brand .icon-container {
+    width: 2em;
+    height: 2em;
+    border-radius: 0.8em;
+    margin-bottom: .5em;
+    padding: 0.5em;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar-brand .icon {
+    width: 2em;
+    height: 2em;
+    background-color: #fff;
+}
+
+.navbar-brand .icon.hexagon {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/hexagon.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/hexagon.svg) no-repeat center;
+}
+
+.navbar-brand .name {
+    padding-top: 0.5em;
+}
+
+ul.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav a {
+    display: flex;
+    color: var(--secondary-color);
+    padding: 1em;
+    text-decoration: none;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar-nav a.active {
+    color: var(--primary-color)
+}
+
+.navbar-nav a:not(.active):hover {
+    background-color: var(--background-color-hover);
+}
+
+.navbar-nav .active .icon {
+    background-color: var(--primary-color);
+    width: 2em;
+    height: 2em;
+}
+
+.icon {
+    background-color: var(--secondary-color);
+    width: 2em;
+    height: 2em;
+}
+
+.navbar-nav img {
+    margin-right: .5em;
+}
+
+
+/* Bottombar icons */
+
+.navbar-nav .icon.home {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/home.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/home.svg) no-repeat center;
+}
+
+.navbar-nav .icon.statistics {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/bar-chart-2.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/bar-chart-2.svg) no-repeat center;
+}
+
+.navbar-nav .icon.mail {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/mail.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/mail.svg) no-repeat center;
+}
+
+.navbar-nav .icon.user {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/user.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/user.svg) no-repeat center;
+}
+
+.navbar-nav .icon.file {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/file.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/file.svg) no-repeat center;
+}
+
+.navbar-footer .image-documents {
+    width: 100%;
+    margin-bottom: -8em;
+    position: relative;
+    z-index: 1
+}
+
+.navbar-footer .container {
+    background-color: var(--background-color);
+    margin: .5em;
+    padding: 1.688em;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    font-weight: normal;
+    border-radius: 1.3em;
+    position: relative;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+.navbar-footer h2 {
+    margin-bottom: 0.25em;
+    color: var(--black);
+}
+
+.navbar-footer span {
+    color: var(--text);
+    font-size: .8em;
+}
+
+.navbar-footer a {
+    color: var(--white);
+    background-color: var(--primary-color);
+    text-decoration: none;
+    text-align: center;
+    padding: 1em;
+    border-radius: 1.3em;
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    /* Tablet (768px) */
+    .navbar {
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        padding: 0.1em;
+        position: fixed;
+        margin: 0;
+        border-top: 1px solid var(--background-color);
+    }
+    .navbar-brand {
+        display: none;
+    }
+    .navbar-nav {
+        display: flex;
+        width: 100%;
+        height: auto;
+        justify-content: space-around;
+    }
+    .navbar-nav a {
+        float: left;
+        font-size: 0.8em;
+        padding: 1em 0.5em;
+    }
+    .navbar-nav .icon {
+        width: 2em;
+        height: 2em;
+    }
+    .navbar-nav img {
+        margin-right: .5em;
+    }
+    .navbar-footer {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* Phone (Large)*/
+    .navbar-nav {
+        position: relative;
+        bottom: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    .navbar-nav a {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    /* Phone (Small) */
+    .navbar-nav span {
+        display: none;
+    }
+}
+/*HEADER*/
+main {
+    margin-top: 1em;
+    margin-right: 1em;
+    border-radius: 2.5em;
+    margin-left: 18.75em;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    padding: 2.3em;
+}
+
+main header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main header .icon.search {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/search.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/search.svg) no-repeat center;
+}
+
+main header .form-inline {
+    display: flex;
+    width: 100%;
+}
+
+main header input[type="search"] {
+    border: none;
+    background: none;
+    margin-left: 0.5em;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+main header button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 2px solid;
+    border-color: var(--secondary-color-with-opacity);
+    outline: none;
+    border-radius: 0.8em;
+    padding: .8em 1.2em;
+    color: var(--text);
+    font-weight: 600;
+}
+
+main header button.change-view {
+    margin-right: 1.2em;
+}
+
+main header button.notification {
+    border: none;
+}
+
+main header button.menu {
+    border: none;
+}
+
+main header .change-view .icon {
+    margin-right: 0.5em;
+}
+
+main header .icon.search {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/search.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/search.svg) no-repeat center;
+}
+
+main header section[role="application"] {
+    display: flex;
+}
+
+main header .icon.layout {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/layout.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/layout.svg) no-repeat center;
+}
+
+main header .icon.notification {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/bell.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/bell.svg) no-repeat center;
+}
+
+main header .icon.menu {
+    -webkit-mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/menu.svg) no-repeat center;
+    mask: url(https://ozcanzaferayan.github.io/financial-crm/icon/menu.svg) no-repeat center;
+}
+
+main h1 {
+    font-size: 3em;
+    color: var(--black);
+    margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+    /* Tablet (768px) */
+    main {
+        margin-left: 0;
+        border-radius: 0;
+        margin: 0;
+        padding: 0em;
+    }
+    main header {
+        margin-bottom: 0em;
+        padding: 1em;
+    }
+    main header button.change-view {
+        display: none;
+    }
+    main h1 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* Phone (Large)*/
+}
+
+@media screen and (max-width: 320px) {
+    /* Phone (Small) */
+    main header button {
+        padding: 0em 1.2em;
+    }
+    main header {
+        padding: 0.5em 0.7em;
+    }
+}
+/*CHARTS*/.charts-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main section[role="credit-card"] {
+    width: 310px;
+    height: 210px;
+    background-color: var(--primary-color);
+    border-radius: 2em;
+    position: relative;
+    margin-left: -4em;
+    margin-bottom: 1em;
+    padding: 2em;
+    box-sizing: border-box;
+    -webkit-box-shadow: 10px 10px 46px -6px rgba(104, 87, 150, 1);
+    -moz-box-shadow: 10px 10px 46px -6px rgba(104, 87, 150, 1);
+    box-shadow: 10px 10px 46px -6px rgba(104, 87, 150, 1);
+    z-index: 1000;
+}
+
+main section[role="credit-card"] img {
+    width: 4em;
+    height: 100%;
+}
+
+main section[role="credit-card"] img.apple_pay {
+    width: 3em;
+}
+
+main section[role="credit-card"] .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+main section[role="credit-card"] .ccNumber {
+    margin-top: 1.1em;
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+.ccBottom {
+    margin-top: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+}
+
+.ccValidThru,
+.ccCardHolder {
+    display: flex;
+    flex-direction: column;
+}
+
+.ccCardHolder {
+    margin-right: 1em;
+}
+
+.ccBottom label {
+    opacity: .5;
+    font-size: .7em;
+}
+
+main section[role="chart"] {
+    width: 100%;
+    margin-left: 1em;
+    background-color: var(--white);
+    border-radius: 2em;
+    margin-bottom: 1em;
+    box-shadow: 1px;
+    padding: 2em;
+    padding-bottom: 5em;
+    box-sizing: border-box;
+}
+
+section[role="chart"] .title {
+    color: var(--black);
+    font-weight: 700;
+    margin-top: 0;
+}
+
+main section[role="chart"].exchange-rates {
+    width: calc(100% - 270px);
+}
+
+
+main section[role="chart"].tableAttendance {
+    width: calc(100% - 170px);
+}
+
+main section[role="chart"].last-costs {
+    width: calc(100% - 0px);
+}
+
+main section[role="chart"].efficiency {
+    width: 310px;
+}
+
+@media screen and (max-width: 1024px) {
+    /* Laptop (1024px) */
+    main section[role="chart"].efficiency {
+        width: 170px;
+    }
+    main section[role="chart"].last-costs {
+        width: calc(100% - 210px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Tablet (768px) */
+    main section[role="credit-card"] {
+        margin-left: 0;
+    }
+    .charts-wrapper {
+        flex-direction: column;
+    }
+    main section[role="chart"].exchange-rates,
+    main section[role="chart"].last-costs,
+    main section[role="chart"].efficiency {
+        margin-left: 0;
+        width: 80%;
+        padding: 2em;
+        border-radius: 0;
+        padding-bottom: 5em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main section[role="chart"].exchange-rates,
+    main section[role="chart"].last-costs,
+    main section[role="chart"].efficiency {
+        padding: 0.5em;
+        padding-bottom: 3em;
+    }
+    main section[role="chart"].efficiency {
+        margin-bottom: 5em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    /* Phone (Small) */
+    main section[role="credit-card"] {
+        width: 100%;
+        padding: 0.75em;
+        margin-bottom: 0.75em;
+        border-radius: 0;
+        height: initial;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    main section[role="credit-card"] img {
+        width: 2em;
+    }
+    main section[role="credit-card"] img.apple_pay {
+        width: 2em;
+    }
+    main section[role="credit-card"] .ccNumber {
+        margin-top: 0.7em;
+    }
+    .ccBottom {
+        margin-top: 0.7em;
+    }
+    section[role="chart"] .title {
+        margin-bottom: 0.2em;
+    }
+    main section[role="chart"].exchange-rates,
+    main section[role="chart"].last-costs,
+    main section[role="chart"].efficiency {
+        height: 15em;
+    }
+}
+
+
+/* defaults */
+/* =============================================== */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  --light: hsl(0, 0%, 100%);
+  --background: linear-gradient(to right bottom, hsl(236, 50%, 50%), hsl(195, 50%, 50%));
+
+/*
+  display: -webkit-box;
+
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+*/
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif;
+
+  min-height: 80vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(hsl(236, 50%, 98%)), to(hsl(236, 50%, 94%)));
+  background: linear-gradient(to bottom, hsl(236, 50%, 98%), hsl(236, 50%, 94%));
+}
+
+a,
+a:link {
+  font-family: inherit;
+  text-decoration: none;
+}
+
+/* modal */
+/* =============================================== */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  display: none;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  background: hsla(0, 0%, 40%, .6);
+}
+
+/* using :target */
+.modal-container:target {
+  display: -webkit-box;
+  display: flex;
+  z-index: 1000;
+}
+
+.modal {
+  width: 50rem;
+  padding: 4rem 2rem;
+  border-radius: .8rem;
+
+  color: var(--light);
+  background: var(--background);
+  box-shadow: .4rem .4rem 2.4rem .2rem hsla(236, 50%, 50%, 0.3);
+  position: relative;
+
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.modal__details {
+  text-align: center;
+
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid hsla(0, 0%, 100%, .4);
+}
+
+.modal__title {
+  font-size: 2.2rem;
+}
+
+.modal__description {
+  margin-top: 1rem;
+
+  font-size: 1rem;
+  font-style: normal;
+}
+
+.modal__text {
+  padding: 0 4rem;
+  margin-bottom: 4rem;
+
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+.modal__text::before {
+  content: '';
+
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid hsla(0, 0%, 100%, .2);
+  border-radius: 100rem;
+
+  pointer-events: none;
+}
+
+.modal__btn {
+  padding: 1rem .6rem;
+  border: 1px solid hsla(0, 0%, 100%, .4);
+  border-radius: 100rem;
+
+  color: inherit;
+  background: transparent;
+  font-size: 1.4rem;
+  font-family: inherit;
+  letter-spacing: .2rem;
+
+  -webkit-transition: .2s;
+
+  transition: .2s;
+  cursor: pointer;
+}
+
+.modal__btn:hover,
+.modal__btn:focus {
+  border-color: hsla(0, 0%, 100%, .6);
+  -webkit-transform: translateY(-.2rem);
+          transform: translateY(-.2rem);
+}
+
+/* links */
+/* =============================================== */
+.link-1 {
+  font-size: 1.8rem;
+
+  color: var(--light);
+  background: var(--background);
+  box-shadow: .4rem .4rem 2.4rem .2rem hsla(236, 50%, 50%, 0.3);
+  border-radius: 100rem;
+  padding: 1.4rem 3.2rem;
+
+  -webkit-transition: .2s;
+
+  transition: .2s;
+}
+
+.link-1:hover,
+.link-1:focus {
+  -webkit-transform: translateY(-.2rem);
+          transform: translateY(-.2rem);
+  box-shadow: 0 0 4.4rem .2rem hsla(236, 50%, 50%, 0.4);
+}
+
+.link-2 {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid hsla(0, 0%, 100%, .4);
+  border-radius: 100rem;
+
+  color: inherit;
+  font-size: 2.2rem;
+
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+  display: -webkit-box;
+
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+
+  -webkit-transition: .2s;
+
+  transition: .2s;
+}
+
+.link-2::before {
+  content: '×';
+
+  -webkit-transform: translateY(-.1rem);
+
+          transform: translateY(-.1rem);
+}
+
+.link-2:hover,
+.link-2:focus {
+  border-color: hsla(0, 0%, 100%, .6);
+  -webkit-transform: translateY(-.2rem);
+          transform: translateY(-.2rem);
+}
+
+/* Second Version Link */
+/* =============================================== */
+.second-version-link,
+.second-version-link:link {
+  color: hsl(236, 50%, 50%);
+  padding: .8rem 1.6rem .8rem .2rem;
+  border-bottom: 2px solid hsl(236, 50%, 50%);
+
+  font-size: 1.4rem;
+  font-weight: bold;
+
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+}
+
+.second-version-link::after {
+  content: '\2197';
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  font-size: .9em;
+}
+
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 0%, .6);
+  font-size: 1.6rem;
+}
+
+
+
+@media screen and (min-width: 500px) {
+  mainz {
+    display: flex;
+    justify-content:center;
+    align-items: left;
+    width: 50vw;
+    height: 20vh;
+  }
+}
+@media screen and (max-width: 500px) {
+    mainz {
+    display: block;
+    justify-content:center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+  }
+}
+.cardz p{
+  color:white;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.cardz p.attendee_nbr{
+  color:white;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+@media screen and (min-width: 500px) {
+  .cardz {
+    width: 13rem;
+    height: 10rem;
+    margin: 0px 10px;
+    background-color: #ff0000;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px 0px rgba(82, 82, 82, 0.75);
+    transition: all 150ms ease-in-out;
+    box-sizing: border-box;
+    -webkit-box-shadow: 10px 10px 46px -6px rgba(104, 87, 150, 1);
+    -moz-box-shadow: 10px 10px 46px -6px rgba(104, 87, 150, 1);
+    box-shadow: 10px 10px 46px -6px rgba(104, 87, 150, 1);
+    background: hsla(238, 88%, 59%, 1);
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+ 
+ .cardz {
+    width: 20rem;
+    height: 9rem;
+    margin: 10px 10px;
+    background-color: #ff0000;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px 0px rgba(82, 82, 82, 0.75);
+    transition: all 150ms ease-in-out;
+    box-sizing: border-box;
+    -webkit-box-shadow: 10px 10px 46px -6px rgba(104, 87, 150, 1);
+    -moz-box-shadow: 10px 10px 46px -6px rgba(104, 87, 150, 1);
+    box-shadow: 10px 10px 46px -6px rgba(104, 87, 150, 1);
+    background: hsla(238, 88%, 59%, 1);
+  }
+
+
+}
+@media screen and (min-width: 500px) {
+  .cardz img{
+    height: 50px;
+    width: 50px;
+    margin-left: 40%;
+    margin-top: 10%;
+    filter: invert(100%) sepia(10%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  }
+}
+
+@media screen and (max-width: 500px) {
+ .cardz img{
+    height: 40px;
+    width: 40px;
+    margin-left: 45%;
+    margin-top: 10%;
+    filter: invert(100%) sepia(10%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  }
+}
+
+
+.cardz:hover {
+  top: -3px;
+  left: -3px;
+  box-shadow: 3px 3px 15px 0px rgba(82, 82, 82, 0.85);
+}
+
+.cardz:active {
+  top: 2px;
+  left: 2px;
+  background-color: #e50000;
+  box-shadow: inset 0 0 10px rgba(82, 82, 82, 0.85);
+}
+
+.mainz{
+  z-index: 1;
+}
+
+ main section[role="attendee"]{
+        z-index: 1;
+}
+
+.cardz{
+  z-index: 1;
+}
+
+
+
+form.add_visitor {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 20px 30px;
+  background: #fff;
+  border-radius: 20px;
+  border-color: rgba(24, 233, 233, 1);
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 10px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+select {
+  padding: 6px;
+  height: 25px;
+  border-radius: 6px;
+}
+
+button {
+  padding: 12px 29px 12px 29px;
+  color: #FFF;
+  background: hsla(238, 88%, 59%, 1);
+  font-size: 15px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 15px;
+  width: 100%;
+  border: 10px solid #fff;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 0, 0.1) inset;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  margin-bottom: 20px;
+  border: none;
+}
+
+legend {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  font-size: 0.5em;
+  margin-right: 2px;
+  line-height: 20px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  form {
+    max-width: 660px;
+  }
+}
+
+.flex-container {
+  display: flex;
+}
+
+@media screen and (max-width: 500px){
+.flex-container {
+  flex-wrap:wrap;
+}
+}
+
+.flex-item-left {
+  padding: 30px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  padding: 30px;
+  flex: 50%;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 500px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+
+
+.flex-container-h{
+  display: flex-50%;
+  flex-direction: column;
+}
+
+.flex-item-center-chart{
+    margin-left: 1em;
+    height: 20em;
+    background-color: var(--white);
+    border-radius: 2em;
+    margin-bottom: 1em;
+    box-shadow: 1px;
+    padding: 2em;
+    padding-bottom: 5em;
+    box-sizing: border-box;
+}
+
+@media (max-width: 500px) {
+.flex-item-center-chart{
+  width: 350px;
+  height:300px;
+}
+
+}
+
+@media (min-width: 500px) {
+.flex-item-center-chart{
+  width: 600px
+}
+
+}
+
+
+@font-face {
+  font-family: "D7ML";
+  src: url("./fonts/DSEG7Modern-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MLI";
+  src: url("./fonts/DSEG7Modern-LightItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MR";
+  src: url("./fonts/DSEG7Modern-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MI";
+  src: url("./fonts/DSEG7Modern-Italic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MB";
+  src: url("./fonts/DSEG7Modern-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MBI";
+  src: url("./fonts/DSEG7Modern-BoldItalic.woff") format('woff');
+}
+
+/*DSEG 7 Modern Mini*/
+@font-face {
+  font-family: "D7MML";
+  src: url("./fonts/DSEG7ModernMini-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MMLI";
+  src: url("./fonts/DSEG7ModernMini-LightItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MMR";
+  src: url("./fonts/DSEG7ModernMini-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MMI";
+  src: url("./fonts/DSEG7ModernMini-Italic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MMB";
+  src: url("./fonts/DSEG7ModernMini-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MMBI";
+  src: url("./fonts/DSEG7ModernMini-BoldItalic.woff") format('woff');
+}
+
+/*DSEG 7 Classic*/
+@font-face {
+  font-family: "D7CL";
+  src: url("./fonts/DSEG7Classic-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7CLI";
+  src: url("./fonts/DSEG7Classic-LightItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7CR";
+  src: url("./fonts/DSEG7Classic-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7CI";
+  src: url("./fonts/DSEG7Classic-Italic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7CB";
+  src: url("./fonts/DSEG7Classic-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7CBI";
+  src: url("./fonts/DSEG7Classic-BoldItalic.woff") format('woff');
+}
+
+
+/*DSEG 7 Classic Mini*/
+@font-face {
+  font-family: "D7CML";
+  src: url("./fonts/DSEG7ClassicMini-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7CMLI";
+  src: url("./fonts/DSEG7ClassicMini-LightItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7CMR";
+  src: url("./fonts/DSEG7ClassicMini-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7CMI";
+  src: url("./fonts/DSEG7ClassicMini-Italic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7CMB";
+  src: url("./fonts/DSEG7ClassicMini-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7CMBI";
+  src: url("./fonts/DSEG7ClassicMini-BoldItalic.woff") format('woff');
+}
+
+
+/*DSEG 14 Modern*/
+@font-face {
+  font-family: "D14ML";
+  src: url("./fonts/DSEG14Modern-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14MLI";
+  src: url("./fonts/DSEG14Modern-LightItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14MR";
+  src: url("./fonts/DSEG14Modern-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14MI";
+  src: url("./fonts/DSEG14Modern-Italic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14MB";
+  src: url("./fonts/DSEG14Modern-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14MBI";
+  src: url("./fonts/DSEG14Modern-BoldItalic.woff") format('woff');
+}
+
+/*DSEG 14 Modern Mini*/
+@font-face {
+  font-family: "D14MML";
+  src: url("./fonts/DSEG14ModernMini-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14MMLI";
+  src: url("./fonts/DSEG14ModernMini-LightItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14MMR";
+  src: url("./fonts/DSEG14ModernMini-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14MMI";
+  src: url("./fonts/DSEG14ModernMini-Italic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14MMB";
+  src: url("./fonts/DSEG14ModernMini-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14MMBI";
+  src: url("./fonts/DSEG14ModernMini-BoldItalic.woff") format('woff');
+}
+
+/*DSEG 14 Classic*/
+@font-face {
+  font-family: "D14CL";
+  src: url("./fonts/DSEG14Classic-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14CLI";
+  src: url("./fonts/DSEG14Classic-LightItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14CR";
+  src: url("./fonts/DSEG14Classic-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14CI";
+  src: url("./fonts/DSEG14Classic-Italic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14CB";
+  src: url("./fonts/DSEG14Classic-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14CBI";
+  src: url("./fonts/DSEG14Classic-BoldItalic.woff") format('woff');
+}
+
+
+/*DSEG 14 Classic Mini*/
+@font-face {
+  font-family: "D14CML";
+  src: url("./fonts/DSEG14ClassicMini-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14CMLI";
+  src: url("./fonts/DSEG14ClassicMini-LightItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14CMR";
+  src: url("./fonts/DSEG14ClassicMini-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14CMI";
+  src: url("./fonts/DSEG14ClassicMini-Italic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14CMB";
+  src: url("./fonts/DSEG14ClassicMini-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D14CMBI";
+  src: url("./fonts/DSEG14ClassicMini-BoldItalic.woff") format('woff');
+}
+
+
+/*DSEG Weather*/
+@font-face {
+  font-family: "DWEATHER";
+  src: url("./fonts/DSEGWeather.woff") format('woff');
+}
+
+
+
+
+
+
+.switch, 
+.circle {
+    height: 50px;
+    transition: .4s;
+}
+.switch {
+    width: 100px;
+    margin: 100px auto 0;
+    background: #FAFAFB;
+    border: 2px solid #E8EAEC;
+    border-radius: 27px;
+}
+.switch.active {
+    background: #52D468;
+    border-color: #41C955;
+}
+.circle {
+    width: 50%;
+    background: #FFF;
+    border-radius: 25px;
+    box-shadow: 0 4px 4px rgba(26,53,71,.25), 0 0 0 1px rgba(26,53,71,.07);
+    cursor: pointer;
+}
+.switch.active .circle {
+    transform: translateX(100%);
+}
+
+
+.clock {
+    color: #fff;
+    font-family: "D7MBI";
+    letter-spacing: 2px;
+    font-size: 22px;
+}
+
