@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Agent logger system</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css"> </head>
+  <link rel="stylesheet" type="text/css" href="css/mdtimepicker.css">
+  <style type="text/css">
+     ::-webkit-scrollbar {
+        width: 20px;
+      }
+
+      ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); 
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px blue;
+        background-color: rgba(18, 43, 63, 0.6); 
+      }
+
+  </style>
+
+<body>
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">
+      <div class="icon-container"> <img src="icons/gem.svg" /> </div> <span class="name">Agent Logger</span> 
+    </a>
+    <ul class="navbar-nav" >
+       <li>
+        <a  href="index.htm" class="active"><img src="icons/house-fill.svg" /> Home</span> </a>
+      </li>
+      <li>
+        <a href="visitors_list.htm"> <img src="icons/journal-check.svg" /> Liste des visiteurs</span> </a>
+      </li>
+      <li>
+        <a href="attendance_agents.htm"><span> <img src="icons/journal-check.svg" />Liste de presence</span> </a>
+      </li>
+      <li>
+        <a href="agent_profile.htm"> <span><img src="icons/person-badge.svg" />Profile des employés</span> </a>
+      </li>
+    </ul>
+
+    <div class="navbar-footer">
+      <div class="container">
+        <h2>Software Packed by</h2> <span>Elvis Ansima</span> <a href="https://github.com/ElvisAns" target="_blank" >@ElvisAns</a> </div>
+    </div>
+  </nav>
+  <main>
+    <header>
+      <section role="application">
+        </button>
+        <button class="notification"> <img class="icon notification" /> </button>
+        <button class="menu"> <img class="icon menu" /> </button>
+      </section>
+    </header>
+    <h1>SMART CARD MONITORING</h1>
+    <div class="charts-wrapper" id="start_dash">
+      <section role="credit-card">
+        <div class="top">
+          <p id="MyClockDisplay" class="clock" onload="showTime()"></p> <img src="icons/bell-fill.svg" style="
+    filter: invert(100%) sepia(10%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);" class="apple_pay" /> </div>
+        <div class="ccNumber"> <span>DEVICE ID 8824274290</span> </div>
+        <div class="ccBottom">
+          <div class="ccValidThru">
+            <label>DEVICE STATUS</label> <span>ATTACHED</span> </div>
+          <div class="ccCardHolder">
+            <label>CLIENT</label> <span>3rd Party</span> </div>
+        </div>
+      </section>
+      <section class="exchange-rates" role="attendee">
+        <mainz>
+          <div class="cardz"> <img src="icons/person-check-fill.svg">
+            <p>AGENTS DEJA PRESENTS</p>
+            <p class="attendee_nbr" id="presents">...</p>
+            <p>Aujourd'hui</p>
+          </div>
+          <div class="cardz"> <img src="icons/person-x-fill.svg">
+            <p>AGENTS PAS ENCORE PRESENTS</p>
+            <p class="attendee_nbr" id="pas_presents">...</p>
+            <p>Aujourd'hui</p>
+          </div>
+          <div class="cardz"> <img src="icons/chevron-double-down.svg">
+            <p>VISITEURS</p>
+            <p class="attendee_nbr" id="visiteurs">...</p>
+            <p>Aujourd'hui</p>
+          </div>
+        </mainz>
+      </section>
+      <div class="flex-container">
+        <div class="flex-item-left">
+          <form class="add_visitor" id="add_a_visitor">
+            <fieldset>
+              <legend>
+                <h2>RECEVOIR UN VISITEUR</h2> </legend>
+              <legend> <span class="number">1</span>IDENTITE DU VISITEUR </legend>
+              <label for="name">Noms:</label>
+              <input type="text" id="name" name="visitor_name" minlength="5">
+              <label for="mail">Email:</label>
+              <input type="email" id="mail" name="visitor_mail">
+              <label for="phone">Telephone:</label>
+              <input type="tel" id="phone" name="visitor_phone" minlength="5">
+              <label for="fonction">FONCTION / ENTREPRISE:</label>
+              <input type="text" id="fonction" name="visitor_function" minlength="5">
+              <label for="piece">Piece d'identite</label>
+              <input type="text" id="card_id" name="card_id" minlength="5">
+              <label for="motif">Motif:</label>
+              <input type="text" id="motif" name="motif_de_visite"  required="">
+              <label for="person">Personnes à vister:</label>
+              <input type="text" id="persone_a_visiter" name="persone_a_visiter" required>
+              <button type="submit">Enregistrer</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="modal-container" id="modal-opened">
+        <div class="modal">
+          <div class="modal__details">
+            <h1 class="modal__title">SMART CARD SCANNED</h1>
+            <p class="modal__description" id="status"></p> <img class="modal__description" src="img/avatar.png"  id="image_smart_card" style="height: 100px; width: 100px; border-radius:50px; box-shadow: 10px;"  />
+            <p class="modal__description"> <span style="font-weight: bolder; font-size: 1.5rem; letter-spacing: 2px;" id="namex"></span>
+              <br> <span id="time"></span> </p>
+            <p class="modal__description" id="copyright">&copy; 2021, agent-logger by Elvis</p>
+          </div>
+          <p class="modal__text"></p>
+          <button class="modal__btn">consulter la liste&rarr;</button>
+          <a href="#modal-closed" class="link-2"></a>
+        </div>
+      </div>
+  </main>
+  <!-- partial:index.partial.html -->
+  <!--a href="#modal-opened" class="link-1" id="modal-closed">Test du service vantoria attendance</a-->
+  <!--a href="https://codepen.io/AbubakerSaeed/full/eYOvKpY" class="second-version-link" target="_blank">CSS Modals (Modal v2)</a><a href="https://abubakersaeed.netlify.app/designs/d7-modal" class="abs-site-link" rel="nofollow noreferrer" target="_blank">abs/designs/d7-modal</a-->
+  <!-- partial -->
+  <script src='js/Chart.min.js'></script>
+  <script src='js/roundedBarCharts.js'></script>
+  <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="js/notify.js"></script>
+  <script src="js/mdtimepicker.js"></script>
+  <script type="text/javascript" src="js/jquery.steps.min.js"></script>
+
+  <script type="text/javascript">
+
+ //console.log = function () {};
+
+
+  $(document).ready(function(){
+    $('#timepicker').mdtimepicker(); //Initializes the time picker
+  });
+
+  function open_model(h) {
+    var url = location.href;
+    location.href = "#" + h;
+  }
+
+  var data_uix;
+  var data_efficience;
+
+  var block_it=0;
+
+  setInterval(function showLog() {
+    if(window.XMLHttpRequest) {
+      xmlhttp = new XMLHttpRequest();
+    } else {
+      xmlhttp = new AcriveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        var attendance_table = JSON.parse(this.responseText);
+        console.log(attendance_table);
+      }
+    };
+    xmlhttp.open("GET", "backend/view_log_table.php", true);
+    xmlhttp.send();
+  }, 1000);
+  
+
+  setInterval(function monitorComPortData() {
+    if(window.XMLHttpRequest) {
+      xmlhttp = new XMLHttpRequest();
+    } else {
+      xmlhttp = new AcriveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        
+        if(this.responseText.length > 0) {
+          
+          userData = JSON.parse(this.responseText); //The info of the user and record it in database!
+          console.log(this.responseText);
+          console.log(userData);
+          
+          if(userData[0][0].status == "non-change") {
+              console.log(userData[0][0].status);
+
+              document.getElementById('presents').innerHTML=userData[1].uixData.attendees;
+
+              document.getElementById('pas_presents').innerHTML= parseInt(userData[1].uixData.agents)-parseInt(userData[1].uixData.attendees);
+              
+              document.getElementById('visiteurs').innerHTML= userData[1].uixData.visitors;
+
+          } 
+
+          else {
+            console.log(userData);
+            location.href = "#" + "modal-opened";
+            document.getElementById('namex').innerHTML = userData[1].Names;
+            document.getElementById('status').innerHTML = userData[1].status;
+            document.getElementById('image_smart_card').src = userData[1].image;
+            document.getElementById('time').innerHTML = userData[1].Date.toString() + ', ' + userData[1].Time.toString();
+            
+            try {
+              var msg = new SpeechSynthesisUtterance();
+              var voices = window.speechSynthesis.getVoices();
+              msg.voice = voices[10]; // Note: some voices don't support altering params
+              msg.voiceURI = 'native';
+              msg.volume = 1; // 0 to 1
+              msg.rate = 1.2; // 0.1 to 10
+              msg.pitch = 1; //0 to 2
+              var temps = userData[1].Time;
+              temps = temps.toString();
+              heure = temps.substring(0, 2);
+              minute = temps.substring(3, 6);
+              msg.text = userData[1].Names.toString() + "\r\n Il est :" + heure.toString() + "heures" + minute.toString() + "minutes" + "\r\n" + userData[1].status.toString();
+              msg.lang = 'fr-FR';
+
+              speechSynthesis.speak(msg).then(
+                location.href = "#" + "modal-closed"
+              );
+
+              clearTimeout();
+            } 
+            catch(e) {
+              console.log(userData[0]);
+              console.log(e);
+            }
+          }
+        }
+      }
+    };
+
+    xmlhttp.open("GET", "backend/load_config.php", true);
+    xmlhttp.send();
+  }, 3300);
+ 
+
+
+var daylist = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+
+  function genTimerStrings(tm, num) {
+    var i;
+    var ret = tm.toString(10);
+    var left = ret.length;
+    if(left < num) {
+      for(i = 0; i < (num - left); i++) {
+        ret = String(0) + ret;
+      }
+    }
+    return ret;
+  }
+
+  function showTime() {
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+    if(h == 0) {
+      h = 12;
+    }
+    if(h > 12) {
+      h = h - 12;
+      session = "PM";
+    }
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    var time = h + ":" + m + ":" + s + " " + session;
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
+    setTimeout(showTime, 1000);
+  }
+  showTime();
+  
+  $(document).ready(function() {
+    $("#add_a_visitor").on("submit", function(event) {
+      event.preventDefault();
+      var formValues = $(this).serialize();
+      $.post("backend/add_visitor.php", formValues, function(data) {
+        // Display the returned data in browser
+        $.notify(data, "info");
+      });
+    });
+  });
+  </script>
+</body>
+
+</html>
