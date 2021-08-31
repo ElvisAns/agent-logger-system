@@ -305,7 +305,7 @@ else
                 'image' => 'img/avatar.png',
                 'Date' => $d,
                 'Time' => $t,
-                'status' => 'Erreur d\'Enregistrement, cette carte n\'est pas reconnue dans notre base de donnée'
+                'status' => "Erreur d'Enregistrement, cette carte ($card_id) n'est pas reconnue dans notre base de donnée"
             );
 
             array_push($dataToSend, $tableRow);
