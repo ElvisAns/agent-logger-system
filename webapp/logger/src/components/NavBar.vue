@@ -17,17 +17,17 @@
         <a href="agent_profile.htm" :class="currentMenu.profile"><img src="icons/person-badge.svg" /> Profile</a>
       </li>
     </ul>
-
-    <div class="navbar-footer">
-      <div class="container">
-        <h2>Software Packed by</h2> <span>Elvis Ansima</span> <a href="https://github.com/ElvisAns" target="_blank" >@ElvisAns</a> </div>
-    </div>
   </nav>
+  <TheAuthorNote />
 </template>
 
 <script>
+    import TheAuthorNote from './TheAuthorNote.vue'
     export default{
         name: 'NavBar',
+        component:{
+            TheAuthorNote
+        },
         props: {
             currentMenu: Object         
         }
