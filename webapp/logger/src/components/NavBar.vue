@@ -5,16 +5,16 @@
     </a>
     <ul class="navbar-nav" >
        <li>
-        <a  href="index.htm" class="active"><img src="icons/house-fill.svg" /> Home</a>
+        <a  href="index.htm" :class="currentMenu.home"><img src="icons/house-fill.svg" /> Home</a>
       </li>
       <li>
-        <a href="visitors_list.htm"> <img src="icons/journal-check.svg" /> Visites</a>
+        <a href="visitors_list.htm" :class="currentMenu.visites"> <img src="icons/journal-check.svg" /> Visites</a>
       </li>
       <li>
-        <a href="attendance_agents.htm"><img src="icons/journal-check.svg" /> Listes</a>
+        <a href="attendance_agents.htm" :class="currentMenu.listes"><img src="icons/journal-check.svg" /> Listes</a>
       </li>
       <li>
-        <a href="agent_profile.htm"><img src="icons/person-badge.svg" /> Profile</a>
+        <a href="agent_profile.htm" :class="currentMenu.profile"><img src="icons/person-badge.svg" /> Profile</a>
       </li>
     </ul>
 
@@ -29,7 +29,7 @@
     export default{
         name: 'NavBar',
         props: {
-            currentMenu: String         
+            currentMenu: Object         
         }
     }
 </script>
