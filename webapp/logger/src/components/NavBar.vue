@@ -25,7 +25,7 @@
     import TheAuthorNote from './TheAuthorNote.vue'
     export default{
         name: 'NavBar',
-        component:{
+        components:{
             TheAuthorNote
         },
         props: {
