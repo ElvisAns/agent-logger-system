@@ -8,7 +8,7 @@
         <a  href="index.htm" :class="currentMenu.home"><img src="icons/house-fill.svg" /> Home</a>
       </li>
       <li>
-        <a href="visitors_list.htm" :class="currentMenu.visites"> <img src="icons/journal-check.svg" /> Visites</a>
+        <a href="visitors_list.htm" :class="currentMenu.visites"> <font-awesome-icon icon="fa-solid fa-users" :color="blue" /> Visites</a>
       </li>
       <li>
         <a href="attendance_agents.htm" :class="currentMenu.listes"><img src="icons/journal-check.svg" /> Listes</a>
@@ -23,10 +23,13 @@
 
 <script>
     import TheAuthorNote from './TheAuthorNote.vue'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
     export default{
         name: 'NavBar',
         components:{
-            TheAuthorNote
+            TheAuthorNote,
+            FontAwesomeIcon
+            
         },
         props: {
             currentMenu: Object         
