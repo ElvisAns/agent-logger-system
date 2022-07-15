@@ -6,4 +6,4 @@ Utilisateurs qui font passer leur cartes.
 D'autre part l'application de gestion d'accès est accessible sur mobile ou PC depuis le meme reseau que le serveur
 
 
-Visitez https://agent-logger.netlify.app/web%20app/ pour voir la version statique et avoir une idée à ce que ressemble le système.
+Visitez https://agent-logger.netlify.app pour voir la version statique et avoir une idée à ce que ressemble le système.
